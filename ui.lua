@@ -2021,3 +2021,15 @@ function library:AddWindow(title, options)
 
 	return window_data, Window
 end
+
+do -- Example UI
+    local WindowOptions = {
+        main_color = Color3.fromRGB(107, 144, 255),
+        min_size = Vector2.new(350, 450),
+        toggle_key = Enum.KeyCode.Insert,
+        can_resize = false,
+    }
+
+	local Window = library:AddWindow("Does it work?", WindowOptions)
+	local Tab = Window:AddTab("Tab 1")
+end
