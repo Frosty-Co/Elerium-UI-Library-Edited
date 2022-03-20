@@ -2035,13 +2035,51 @@ do -- Example UI
 	local VisualTab = Window:AddTab("Visual")
 	local MiscTab = Window:AddTab("Miscellaneous")
 
-    -- Aimbot Tab Content
-    do 
-        local AFM = AimbotTab:AddFolder("Main")
-        local AFM_activation = AFM:AddKeybind("Activation", function(obj)
+    do -- Elements
+        do -- Aimbot Tab Content
+            local AFM = AimbotTab:AddFolder("Aimbot")
 
-        end, {
-            ["Default"] = Enum.KeyCode.Mouse2,
-        })
+            AFM:AddLabel("Enabled")
+            local AFM_ignorewalls = AFM:AddSwitch("Whether to the aimbot is enabled or not.", function(bool)
+                
+            end)
+
+            AFM:AddLabel("Aim Bind")
+            local AFM_activation = AFM:AddKeybind("Bind a Key for the Aimbot", function(key)
+                print(key)
+            end, {
+                ["Default"] = Enum.KeyCode.Mouse2,
+            })
+
+            local AFM_fov = AFM:AddSlider("FOV", function(value)
+                print(value)
+            end, {
+                ["min"] = 0.00,
+                ["max"] = 100.00,
+            })
+
+            AFM_fov:Set(10.00)
+            
+            AFM:AddLabel("Aimbot bone.")
+            local AFM_aimbone = AFM:AddDropdown("Bone to aim at.", function(index)
+                if index == "Head" then
+                
+                elseif index == "Body" then
+                
+                elseif index == "Any" then
+                
+                end
+            end)
+
+            local ab_head = AFM_aimbone:Add("Head")
+            local ab_body = AFM_aimbone:Add("Body")
+            local ab_any = AFM_aimbone:Add("Any")
+
+            local AFM_ignorewalls = AFM:AddSwitch("Ignore Walls", function(bool)
+                
+            end)
+
+
+        end
     end
 end
