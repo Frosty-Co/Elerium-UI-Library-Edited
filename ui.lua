@@ -2025,11 +2025,21 @@ end
 do -- Example UI
     local WindowOptions = {
         main_color = Color3.fromRGB(107, 144, 255),
-        min_size = Vector2.new(350, 450),
+        min_size = Vector2.new(400, 450),
         toggle_key = Enum.KeyCode.Insert,
         can_resize = false,
     }
 
 	local Window = library:AddWindow("Does it work?", WindowOptions)
-	local Tab = Window:AddTab("Tab 1")
+	local AimbotTab = Window:AddTab("Aimbot")
+	local VisualTab = Window:AddTab("Visual")
+	local MiscTab = Window:AddTab("Miscellaneous")
+
+    -- Aimbot Tab Content
+    do 
+        local AFM = AimbotTab:AddFolder("Main")
+        local AFM_activation = AFM:AddKeybind("Activation", function(obj))
+
+        end
+    end
 end
