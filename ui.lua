@@ -2048,7 +2048,7 @@ do -- Example UI
             local AFM_activation = AFM:AddKeybind("Bind a Key for the Aimbot", function(key)
                 print(key)
             end, {
-                ["Default"] = Enum.KeyCode.Mouse2,
+                ["Default"] = Enum.KeyCode.LeftShift,
             })
 
             local AFM_fov = AFM:AddSlider("FOV", function(value)
